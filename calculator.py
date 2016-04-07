@@ -1,3 +1,5 @@
+from arithmetic import *
+
 # No setup
 # repeat forever:
 #     read input
@@ -11,25 +13,34 @@ def calc():
         print 'welcome to the calculator!'
         input = raw_input("Please give me a prefix expression. ")
         token = input.split(" ") #tokenizing the input aka pow 3 5 into [pow, 3, 5]
-        # print token, testing to see what our tokens looked like
+        
         if token[0] == 'q':
             return None
+
         elif token[0] == '+':
-            return token[1] + token[2]
+            print add(int(token[1]), int(token[2])) #add(int(num1), int(num2))
+
         elif token[0] == '-':
-            return token[1] - token[2]
+            print subtract(int(token[1]), int(token[2]))
+
         elif token[0] == '*':
-            return token[1] * token[2]
+            print multiply(int(token[1]), int(token[2]))
+
         elif token[0] == '/':
-            return float(token[1]) / token[2] 
+            print divide(int(token[1]), int(token[2])) 
+
         elif token[0] == 'square':
-            return token[1] ** 2
+            print square(int(token[1]))
+
         elif token[0] == 'cube':
-            return token[1]** 3
-        elif token[0] == 'pow':
-            return token[1] ** token[2]
+            print cube(int(token[1]))
+
+        elif token[0] == 'power':
+            print power(int(token[1]), int(token[2]))
+
         elif token[0] == 'mod':
-            return token[1] % token[2]
+            print mod(int(token[1]), int(token[2]))
+
         else: 
             print 'That was not the correct prefix expression!'
 
