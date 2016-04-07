@@ -11,11 +11,11 @@ def calc():
     """Take input and decide which function to call to evaluate"""
     while True:
         print 'welcome to the calculator!'
-        input = raw_input("Please give me a prefix expression. ")
-        token = input.split(" ") #tokenizing the input aka pow 3 5 into [pow, 3, 5]
+        prefix = raw_input("Please give me a prefix expression. ")
+        token = prefix.split(" ") #tokenizing the input aka pow 3 5 into [pow, 3, 5]
         
         if token[0] == 'q':
-            return None
+            return
 
         elif token[0] == '+':
             print add(int(token[1]), int(token[2])) #add(int(num1), int(num2))
